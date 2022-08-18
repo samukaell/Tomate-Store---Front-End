@@ -11,10 +11,10 @@ import './css/reset.css'
 import './css/global.css'
 
 export default function App() {
-    const [token, setToken] = useState(null);
+    const [login, setLogin] = useState({name:null,image:null,token:null});
     return(
         <BrowserRouter>
-            <LoginConext.Provider value={{ token, setToken }}>
+            <LoginConext.Provider value={{ login, setLogin }}>
                 <Routes>
                     <Route path="/sign-in" element={<Login />} />
                     <Route path="/sign-up" element={<SignUp />} />

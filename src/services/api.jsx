@@ -3,7 +3,29 @@ import axios from "axios";
 const URL = "http://localhost:5000/";
 
 async function postLogin(body) {
-    return await axios.post(`${URL}signin`, body);
+    try {
+        const resposta = await axios.post(`${URL}signin`, body);
+        const {data} = resposta;
+        console.log("Login!");
+        return data;
+    }
+    catch(err) {
+        console.log(err.resposta);
+        return null;
+    }
+}
+
+async function getUser(body) {
+    try {
+        const resposta = await axios.post(`${URL}user`, body);
+        const {data} = resposta;
+        console.log("Bem vindo user ->!",data);
+        return data;
+    }
+    catch(err) {
+        console.log(err.resposta);
+        return null;
+    }
 }
 
 async function createAddress(address){
@@ -37,7 +59,8 @@ async function postSignUp(objeto) {
 const api = {
     postLogin,
     createAddress,
-    postSignUp
+    postSignUp,
+    getUser
 };
 
 export default api;

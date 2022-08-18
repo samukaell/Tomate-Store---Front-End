@@ -21,12 +21,17 @@ export default function Login(){
 
         const retorno = await api.postLogin({
             email: email,
-            passoword: passoword
+            password: passoword
         });
-        console.log("Token->",retorno)
         if(retorno !== null){
             setHabilitarCad(!habilitarCad);
-            setLogin(retorno);
+            //Puxar as informaçoes do user
+            const user = await api.getUser({email:email})
+            setLogin({
+                name:user.name,
+                image:user.image,
+                token:retorno.token
+            });
             navigate('/');
         }else{
             alert("Por favor preencha os campos novamente.");

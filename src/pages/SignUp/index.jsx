@@ -6,7 +6,8 @@ import api from "../../services/api";
 
 export default function SignUp(){
     const [habilitarCad,setHabilitarCad] = useState(false);
-    //const [name,setName] = useState("");
+    const [name,setName] = useState("");
+    const [image,setImage] = useState("");
     const [email,setEmail] = useState("");
     const [password,setPassword] = useState("");
     //endereço
@@ -30,7 +31,9 @@ export default function SignUp(){
         if(endereco !== null && endereco !== undefined){
             const promise = await api.postSignUp({ 
                 email:email,
-                password: password
+                password: password,
+                name:name,
+                image:image
     
             });
             if(promise !== null){
@@ -49,6 +52,12 @@ export default function SignUp(){
         <StyledSignUp>
                 <h1>TomateStore</h1>
                 <form onSubmit={handleSubmitSignUp}>
+                    <input className="input-name" type="text"  placeholder="Nome"  required
+                        value={name} onChange={e => setName(e.target.value)}
+                    />
+                    <input className="input-image" type='url'  placeholder="imagem do perfil" required
+                        value={image} onChange={e => setImage(e.target.value)}
+                    />
                     <input className="input-email" type="email"  placeholder="email"  required
                         value={email} onChange={e => setEmail(e.target.value)}
                     />
