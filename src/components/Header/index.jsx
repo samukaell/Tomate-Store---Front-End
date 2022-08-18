@@ -16,7 +16,14 @@ export default function Header(props){
                 </div>
 
                 <div className='info-user'>
-                    <IoPersonCircle className='more'/>
+                    {name!== null ?
+                        <div className='container-user'>
+                            <p className='user-name'>{name}</p>
+                            <img className='user-image' src={image} alt="Imagem do usuario"/>
+                        </div>
+                        :
+                        <IoPersonCircle className='more'/>
+                    }
                 </div>
             </div>
             

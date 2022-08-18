@@ -53,7 +53,7 @@ export default function Login(){
 
                 <button className="botao-input" type='subimit'>
                     {habilitarCad ? 
-                        <ThreeDots color="#FFFFFF" height={30} width={30} />
+                        <ThreeDots color="#1877F2" height={30} width={30} />
                         : 
                         'Entrar'
                     }

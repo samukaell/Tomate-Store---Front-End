@@ -1,10 +1,17 @@
+import LoginContext from '../../util/LoginContext';
+import { useContext,useState } from 'react';
+
 import Header from "../../components/Header"
 import Main from "./Main"
 
 export default function Home(){
+    const { login } = useContext(LoginContext);
     return(
         <>
-            <Header/>
+            <Header
+                name={login.name}
+                image={login.image}
+            />
             <Main/> 
         </>
     )

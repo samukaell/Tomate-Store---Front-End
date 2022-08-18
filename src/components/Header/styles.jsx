@@ -41,10 +41,31 @@ const StyledHeader = styled.header`
         background: #FFFFFF;
         border-radius: 8px;
         border: none;
+        font-family: 'Lato';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 19px;
     }
     .info-user{
         display: flex;
         align-items: center;
+    }
+    .container-user{
+        display: flex;
+        align-items: center;
+    }
+    .user-name{
+        font-family: 'Lato';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 19px;
+        color: #FFFFFF;
+        margin-right: 5px;
+    }
+    .user-image{
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
     }
     .more{
         color: #FFFFFF;

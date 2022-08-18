@@ -56,11 +56,24 @@ async function postSignUp(objeto) {
     
 }
 
+async function getProducts(body) {
+    try {
+        const resposta = await axios.get(`${URL}product`);
+        const {data} = resposta;
+        return data;
+    }
+    catch(err) {
+        console.log(err.resposta);
+        return null;
+    }
+}
+
 const api = {
     postLogin,
     createAddress,
     postSignUp,
-    getUser
+    getUser,
+    getProducts
 };
 
 export default api;

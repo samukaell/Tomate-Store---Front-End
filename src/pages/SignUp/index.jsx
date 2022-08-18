@@ -52,34 +52,41 @@ export default function SignUp(){
         <StyledSignUp>
                 <h1>TomateStore</h1>
                 <form onSubmit={handleSubmitSignUp}>
-                    <input className="input-name" type="text"  placeholder="Nome"  required
-                        value={name} onChange={e => setName(e.target.value)}
-                    />
-                    <input className="input-image" type='url'  placeholder="imagem do perfil" required
-                        value={image} onChange={e => setImage(e.target.value)}
-                    />
-                    <input className="input-email" type="email"  placeholder="email"  required
-                        value={email} onChange={e => setEmail(e.target.value)}
-                    />
-                    <input className="input-senha" type="password"  placeholder="senha"  required
-                        value={password} onChange={e => setPassword(e.target.value)}
-                    />
-                    <p className='info-add'>Endereço</p>
-                    <input className="input-city" type="text"  placeholder="Nome da Cidade"  required
-                        value={city} onChange={e => setCity(e.target.value)}
-                    />
+                    <div className='container-form'>
+                        <div className='conatiner-user'>
+                            <p className='info-add'>Pessoal</p>
+                            <input className="input-name" type="text"  placeholder="Nome"  required
+                                value={name} onChange={e => setName(e.target.value)}
+                            />
+                            <input className="input-image" type='url'  placeholder="imagem do perfil" required
+                                value={image} onChange={e => setImage(e.target.value)}
+                            />
+                            <input className="input-email" type="email"  placeholder="email"  required
+                                value={email} onChange={e => setEmail(e.target.value)}
+                            />
+                            <input className="input-senha" type="password"  placeholder="senha"  required
+                                value={password} onChange={e => setPassword(e.target.value)}
+                            />
+                        </div>
+                        <div className='container-address'>
+                            <p className='info-add'>Endereço</p>
+                            <input className="input-city" type="text"  placeholder="Nome da Cidade"  required
+                                value={city} onChange={e => setCity(e.target.value)}
+                            />
 
-                    <input className="input-district" type="text"  placeholder="Nome do bairro"  required
-                        value={district} onChange={e => setDistrict(e.target.value)}
-                    />
+                            <input className="input-district" type="text"  placeholder="Nome do bairro"  required
+                                value={district} onChange={e => setDistrict(e.target.value)}
+                            />
 
-                    <input className="input-street" type="text"  placeholder="Nome da rua"  required
-                        value={street} onChange={e => setStreet(e.target.value)}
-                    />
+                            <input className="input-street" type="text"  placeholder="Nome da rua"  required
+                                value={street} onChange={e => setStreet(e.target.value)}
+                            />
 
-                    <input className="input-number" type='number'  placeholder="Numero da Casa"  required
-                        value={number} onChange={e => setNumber(e.target.value)}
-                    />
+                            <input className="input-number" type='number'  placeholder="Numero da Casa"  required
+                                value={number} onChange={e => setNumber(e.target.value)}
+                            />
+                        </div>
+                    </div>
 
                     <button className="botao-input" type='subimit'>
                         {habilitarCad ? 

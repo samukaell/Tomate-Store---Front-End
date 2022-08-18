@@ -8,6 +8,27 @@ const StyledSignUp = styled.main`
     flex-direction: column;
     align-items: center;
     justify-content: center;
+
+    form{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .container-form{
+        display: flex;
+        justify-content: space-around;
+        width: 60vw;
+    }
+    .conatiner-user{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .container-address{
+        display: flex;
+        flex-direction: column;
+    }
+
     p{
         color: #FFFFFF;
     }
@@ -37,11 +58,6 @@ const StyledSignUp = styled.main`
         flex-direction: column;
         align-items: center;
         justify-content: center;
-    }
-    form{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
     }
     input{
         width: 264px;
