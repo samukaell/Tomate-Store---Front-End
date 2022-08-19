@@ -6,6 +6,8 @@ import LoginConext from "./util/LoginContext"
 import Login from "./pages/Login";
 import SignUp from "./pages/SignUp";
 import Home from "./pages/Home";
+import ProductPage from "./pages/ProductPage";
+import Buy from "./pages/Buy";
 //Css
 import './css/reset.css'
 import './css/global.css'
@@ -19,6 +21,8 @@ export default function App() {
                     <Route path="/sign-in" element={<Login />} />
                     <Route path="/sign-up" element={<SignUp />} />
                     <Route path="/" element={<Home />} />
+                    <Route path="/product/:idProduct" element={<ProductPage />} />
+                    <Route path="/buy/:idProduct" element={<Buy />} />
                 </Routes>
             </LoginConext.Provider>
         </BrowserRouter>

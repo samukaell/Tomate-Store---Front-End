@@ -4,7 +4,7 @@ import { useContext } from 'react';
 import Header from "../../components/Header"
 import Main from "./Main"
 
-export default function Home(){
+export default function ProductPage(){
     const { login } = useContext(LoginContext);
     return(
         <>
@@ -12,7 +12,7 @@ export default function Home(){
                 name={login.name}
                 image={login.image}
             />
-            <Main/> 
+            <Main/>
         </>
     )
 }

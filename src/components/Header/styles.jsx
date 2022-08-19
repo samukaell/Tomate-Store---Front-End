@@ -6,6 +6,10 @@ const StyledHeader = styled.header`
     height: 72px;
     display: flex;
     justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 3;
     .box-header{
         display: flex;
         justify-content: space-between;

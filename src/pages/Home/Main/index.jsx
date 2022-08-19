@@ -5,8 +5,8 @@ import Product from '../../../components/Product'
 import {StyledMain} from './styles'
 export default function Main(){
 
-    const [produtos,setProdutos] = useState([{name:null,image:null,description:null,userId:null,price:null}]);
-    const [atualizar,setAtualizar] = useState(true);
+    const [produtos,setProdutos] = useState([]);
+    //const [atualizar,setAtualizar] = useState(true);
 
     async function carregarProdutos(){
         const retorno = await api.getProducts();
@@ -15,24 +15,28 @@ export default function Main(){
 
     useLayoutEffect(() => {
         carregarProdutos();
-    },[atualizar]);
+    },[]);
 
     return (
         <StyledMain>
             <div className="container-product">
-            {produtos.map((produto,index)=>{
-                return(
-                    <Product
-                        name={produto.name}
-                        image={produto.image}
-                        description={produto.description}
-                        userId={produto.userId}
-                        price={produto.price}
-                        key={index}
-                    />
-                )
-            })
-
+            {
+                produtos.length === 0 ?
+                <p>Sem produtos disponiveis</p>
+                :
+                produtos.map((produto,index)=>{
+                    return(
+                        <Product
+                            name={produto.name}
+                            image={produto.image}
+                            description={produto.description}
+                            userId={produto.userId}
+                            price={produto.price}
+                            productId={produto.id}
+                            key={index}
+                        />
+                    )
+                    })
             }
             </div>
         </StyledMain>
